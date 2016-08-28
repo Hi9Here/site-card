@@ -1,0 +1,113 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<!--
+`site-card`
+Site Card for Websites
+
+@demo demo/index.html 
+-->
+
+<dom-module id="site-card">
+    <template>
+     <style>
+      :host {
+        display: inline-block;
+        text-align: center;
+        margin: 10px;
+      }
+      iron-icon {
+      margin: 5px;
+      }
+    iron-image {
+      width: 130px;
+      height: 100px;
+      }
+    paper-material {
+      display: inline-block;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      color: #757575;
+    }
+    h3 {
+      font-weight: 300;
+    }
+    a {
+      text-decoration: none;
+    }
+    paper-button {
+        color: #fff;
+        background-color: red;
+        font-size: 14px;
+    }
+    paper-toolbar {
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    </style>
+    
+     <a href$="{{link}}">
+    <paper-material elevation="1" style$="width: {{width}}px; height: {{height}}px;">
+      <paper-toolbar style$="background-color: {{barcolor}}; display: {{toolbardisplay}}">
+        <iron-icon icon="{{icon}}" style$="display: {{icondisplay}}"></iron-icon>
+        <div title>
+          <h3>{{title}}</h3>
+        </div>
+      </paper-toolbar>      
+      <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      <content></content> 
+      <paper-button raised style$="display: {{buttondisplay}}">{{buttontitle}}</paper-button>      
+    </paper-material>
+  </a>
+
+  </template>
+
+    <script>
+        Polymer({
+            is: 'site-card',
+            properties: {
+                title: String,
+                barcolor: String,
+                icon: String,
+                icondisplay: {
+                    type: String,
+                    value: "none"
+                },
+                toolbardisplay: {
+                    type: String,
+                    value: ""
+                },
+                pic: String,
+                imagedisplay: {
+                    type: String,
+                    value: "none"
+                },
+                imagesizing: {
+                    type: String,
+                    value: "cover"
+                },
+                imageheight: String,
+                imagewidth: String,
+                link: String,
+                width: {
+                    type: String,
+                    value: 130
+                },
+                height: {
+                    type: String,
+                    value: 200
+                },
+                buttondisplay: String,
+                buttonlink: String,
+                buttontitle: String
+            }
+        });
+    </script>
+</dom-module>
