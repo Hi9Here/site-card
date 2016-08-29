@@ -24,10 +24,6 @@ Site Card for Websites
       iron-icon {
       margin: 5px;
       }
-    iron-image {
-      width: 130px;
-      height: 100px;
-      }
     paper-material {
       display: inline-block;
       background-color: #fff;
@@ -93,16 +89,22 @@ Site Card for Websites
                     type: String,
                     value: "cover"
                 },
-                imageheight: String,
-                imagewidth: String,
-                link: String,
-                width: {
+                imageheight: {
                     type: String,
                     value: 130
                 },
+                imagewidth: {
+                    type: String,
+                    value: 180
+                },
+                link: String,
+                width: {
+                    type: String,
+                    value: 180
+                },
                 height: {
                     type: String,
-                    value: 200
+                    value: 250
                 },
                 buttondisplay: String,
                 buttonlink: String,
