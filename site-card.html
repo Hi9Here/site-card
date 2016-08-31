@@ -39,6 +39,7 @@ Site Card for Websites
     h3 {
       font-weight: 400;
       font-size: 16px;
+      margin: 10px;
     }
     a {
       text-decoration: none;
@@ -50,14 +51,17 @@ Site Card for Websites
         right: 10px;
         bottom: 10px;
     }
-    iron-image {
-        position: absolute;
-        bottom: 40px;
-        left: 50px;
-    }
     paper-toolbar {
       font-size: 14px;
       text-align: center;
+    }
+    #stuff {
+        height: 165px;
+        display: inline-block;
+    }
+    #bottomstuff {
+        height: 165px;
+        display: inline-block;
     }
     
     </style>
@@ -68,14 +72,18 @@ Site Card for Websites
         <div title>
           <h2>{{title}}</h2>
         </div>
-      </paper-toolbar>      
-      <h3>{{subtitle}}</h3>
-      <h3>{{price}}</h3>
-      <h3>{{date}}</h3>
-      <h3>{{location}}</h3>
-      <content></content> 
-      <paper-fab icon="add" style="display: {{buttondisplay}}; background: {{buttoncolor}}"></paper-fab>      
-      <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      </paper-toolbar>
+      <div id="stuff">
+        <h3>{{subtitle}}</h3>
+        <h3>{{price}}</h3>
+        <h3>{{date}}</h3>
+        <h3>{{location}}</h3>
+        <content></content> 
+      </div>  
+      <div id="bottomstuff">
+        <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      </div>
+        <paper-fab icon="add" style="display: {{buttondisplay}}; background: {{buttoncolor}}"></paper-fab>      
     </paper-material>
   </a>
 
@@ -106,20 +114,20 @@ Site Card for Websites
                 },
                 imageheight: {
                     type: String,
-                    value: 80
+                    value: 150
                 },
                 imagewidth: {
                     type: String,
-                    value: 140
+                    value: 150
                 },
                 link: String,
                 width: {
                     type: String,
-                    value: 220
+                    value: 300
                 },
                 height: {
                     type: String,
-                    value: 300
+                    value: 400
                 },
                 buttondisplay: String,
                 buttonlink: String,
