@@ -1,10 +1,11 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../paper-material/paper-material.html">
 <link rel="import" href="../paper-toolbar/paper-toolbar.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-fab/paper-fab.html">
 
 <!--
 `site-card`
@@ -42,14 +43,17 @@ Site Card for Websites
     a {
       text-decoration: none;
     }
-    paper-button {
+    paper-fab {
         color: #fff;
         font-size: 14px;
         position: absolute;
-        bottom: 15px;
-        width: 120px;
-        left: 60px;
-        right: 60px;    
+        right: 10px;
+        bottom: 10px;
+    }
+    iron-image {
+        position: absolute;
+        bottom: 40px;
+        left: 50px;
     }
     paper-toolbar {
       font-size: 14px;
@@ -61,18 +65,18 @@ Site Card for Websites
      <a href$="{{link}}">
     <paper-material elevation="1" style="width: {{width}}px; height: {{height}}px;">
       <paper-toolbar style="background-color: {{barcolor}}; display: {{toolbardisplay}}">
-        <iron-icon icon="{{icon}}" style="display: {{icondisplay}}"></iron-icon>
         <div title>
           <h2>{{title}}</h2>
         </div>
       </paper-toolbar>      
-      <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
       <h3 style="margin-top: 5px;">{{subtitle}}</h3>
       <h3>{{price}}</h3>
       <h3>{{date}}</h3>
       <h3>{{location}}</h3>
       <content></content> 
-      <paper-button raised style="display: {{buttondisplay}}; background: {{buttoncolor}}">{{buttontitle}}</paper-button>      
+      <paper-fab icon="add" style="display: {{buttondisplay}}; background: {{buttoncolor}}"></paper-fab>      
+      <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      <paper-fab icon="add"></paper-fab>
     </paper-material>
   </a>
 
@@ -84,11 +88,6 @@ Site Card for Websites
             properties: {
                 title: String,
                 barcolor: String,
-                icon: String,
-                icondisplay: {
-                    type: String,
-                    value: ""
-                },
                 subtitle: String,
                 price: String,
                 toolbardisplay: {
@@ -104,15 +103,15 @@ Site Card for Websites
                 },
                 imagesizing: {
                     type: String,
-                    value: "cover"
+                    value: "contain"
                 },
                 imageheight: {
                     type: String,
-                    value: 160
+                    value: 80
                 },
                 imagewidth: {
                     type: String,
-                    value: 220
+                    value: 140
                 },
                 link: String,
                 width: {
@@ -125,7 +124,6 @@ Site Card for Websites
                 },
                 buttondisplay: String,
                 buttonlink: String,
-                buttontitle: String,
                 buttoncolor: String
             }
         });
