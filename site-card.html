@@ -31,8 +31,13 @@ Site Card for Websites
       border-radius: 5px;
       color: #757575;
     }
+    h2 {
+        font-weight: 300;
+        font-size: 16px;
+    }
     h3 {
       font-weight: 300;
+      font-size: 14px;
     }
     a {
       text-decoration: none;
@@ -41,6 +46,11 @@ Site Card for Websites
         color: #fff;
         background-color: red;
         font-size: 14px;
+        position: absolute;
+        bottom: 15px;
+        width: 120px;
+        left: 60px;
+        right: 60px;    
     }
     paper-toolbar {
       font-size: 14px;
@@ -54,10 +64,13 @@ Site Card for Websites
       <paper-toolbar style="background-color: {{barcolor}}; display: {{toolbardisplay}}">
         <iron-icon icon="{{icon}}" style="display: {{icondisplay}}"></iron-icon>
         <div title>
-          <h3>{{title}}</h3>
+          <h2>{{title}}</h2>
         </div>
       </paper-toolbar>      
       <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      <h3>{{subtitle}}</h3>
+      <h3>{{date}}</h3>
+      <h3>{{location}}</h3>
       <content></content> 
       <paper-button raised style="display: {{buttondisplay}}">{{buttontitle}}</paper-button>      
     </paper-material>
@@ -76,10 +89,13 @@ Site Card for Websites
                     type: String,
                     value: ""
                 },
+                subtitle: String,
                 toolbardisplay: {
                     type: String,
                     value: ""
                 },
+                datefield: String,
+                location: String,
                 pic: String,
                 imagedisplay: {
                     type: String,
@@ -95,7 +111,7 @@ Site Card for Websites
                 },
                 imagewidth: {
                     type: String,
-                    value: 200
+                    value: 220
                 },
                 link: String,
                 width: {
