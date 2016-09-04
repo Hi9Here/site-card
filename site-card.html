@@ -45,11 +45,11 @@ Site Card for Websites
       text-align: center;
     }
     #stuff {
-        height: 165px;
+        height: 185px;
         display: inline-block;
     }
     #bottomstuff {
-        height: 165px;
+        height: 145px;
         display: inline-block;
     }
     iron-image {
@@ -66,7 +66,7 @@ Site Card for Websites
           <h2>{{title}}</h2>
         </div>
       </paper-toolbar>
-      <div id="stuff">
+      <div id="stuff" style="display:{{stuffdisplay}}">
         <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
       </div>  
       <div id="bottomstuff">
@@ -90,6 +90,10 @@ Site Card for Websites
                 subtitle: String,
                 price: String,
                 toolbardisplay: {
+                    type: String,
+                    value: ""
+                },
+                stuffdisplay: {
                     type: String,
                     value: ""
                 },
