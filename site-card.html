@@ -22,13 +22,9 @@ Site Card for Websites
         text-align: center;
         margin: 10px;
       }
-      iron-icon {
-      margin: 5px;
-      }
     paper-material {
       display: inline-block;
       background-color: #fff;
-      padding: 10px;
       border-radius: 5px;
       color: #333333;
     }
@@ -37,19 +33,12 @@ Site Card for Websites
         font-size: 18px;
     }
     h3 {
-      font-weight: 400;
-      font-size: 16px;
-      margin: 10px;
+      font-weight: 300;
+      font-size: 18px;
+      margin: 10px 20px 10px 10px;
     }
     a {
       text-decoration: none;
-    }
-    paper-fab {
-        color: #fff;
-        font-size: 14px;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
     }
     paper-toolbar {
       font-size: 14px;
@@ -63,7 +52,11 @@ Site Card for Websites
         height: 165px;
         display: inline-block;
     }
+    iron-image {
+        margin: 0;
+    }
     
+
     </style>
     
      <a href$="{{link}}">
@@ -74,14 +67,14 @@ Site Card for Websites
         </div>
       </paper-toolbar>
       <div id="stuff">
+        <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
+      </div>  
+      <div id="bottomstuff">
         <h3>{{subtitle}}</h3>
         <h3>{{price}}</h3>
         <h3>{{date}}</h3>
         <h3>{{location}}</h3>
         <content></content> 
-      </div>  
-      <div id="bottomstuff">
-        <iron-image src="{{pic}}" preload sizing="{{imagesizing}}" style="display: {{imagedisplay}}; width:{{imagewidth}}px; height:{{imageheight}}px;"></iron-image> 
       </div>
     </paper-material>
   </a>
@@ -109,15 +102,15 @@ Site Card for Websites
                 },
                 imagesizing: {
                     type: String,
-                    value: "contain"
+                    value: "cover"
                 },
                 imageheight: {
                     type: String,
-                    value: 150
+                    value: 165
                 },
                 imagewidth: {
                     type: String,
-                    value: 150
+                    value: 300
                 },
                 link: String,
                 width: {
